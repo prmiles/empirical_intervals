@@ -1,6 +1,14 @@
-function y=generate_empirical_intervals(x,limits)
-%PLIMS Empirical quantiles
-% plims(x,p)  calculates p quantiles from columns of x
+function y=generate_empirical_intervals(f,limits)
+% Generates empirical intervals based on a set of model responses (f).  The
+% intervals limits require a specific form:
+%   limits = [left1, left2, ..., center, ..., right2, right1]
+% There should be an odd number of elements in 'limits'.  If the center is
+% 0.5, this will correspond to the middle row (or interpolated middle row)
+% of the sorted model responses.  Note, the model responses will be sorted
+% in a column wise fashion.
+%
+% Requires:
+%   - plims(f,p)  calculates p quantiles from columns of f
 
 % Marko Laine <Marko.Laine@Helsinki.FI>
 % $Revision: 1.4 $  $Date: 2007/05/21 11:19:12 $
@@ -16,5 +24,5 @@ if mod(length(limits),2) == 0 % is odd
     fprintf('limits = [left1, left2, ..., center, ..., right2, right1]\n')
 end
 
-[n,m] = size(x); if n==1; n=m;end
-y = interp1(sort(x),(n-1)*limits+1);
+[n,m] = size(f); if n==1; n=m;end
+y = interp1(sort(f),(n-1)*limits+1);

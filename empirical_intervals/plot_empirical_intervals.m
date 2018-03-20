@@ -2,12 +2,13 @@ function [medianhandle, fillhandle, settings] = ...
     plot_empirical_intervals(time, intervals, inputsettings)
 % Settings for plotting emprical intervals
 % Options:
-% - colormap: jet, parula, hsv, etc. (see MathWorks)
+% - colorscheme: 'gradient' or 'spectrum';
+%   - gradient:
+%       * initialcolor: [r,g,b] - dimmest (lightest) color
+%   - spectrum:
+%       * colormap: jet, parula, hsv, etc. (see MathWorks)
 % - figID: specify figure handle - leave empty to generate new figure;
-% - colorscheme: 'spectrum' or 'gradient';
 % - transparency_level: # number between 0 (translucent) and 1 (opaque);
-% - initialcolor: [r,g,b] - dimmest (lightest) color - used in
-% 'gradient' color scheme
 % - meanmodelstyle: plot style/color for mean model response
 
 % unpack input arguments
