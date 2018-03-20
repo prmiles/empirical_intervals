@@ -44,6 +44,14 @@ for j = 1:N
     Y(j,:) = obs;
 end
 
+% basic plot of mean model response
+figure(100)
+plot(P, psi, '-.', 'LineWidth', 3);
+axis([0 Pf -60 80])
+set(gca,'Fontsize',[20]);
+xlabel('Polarization P')
+ylabel('Helmholtz Energy \psi')
+
 %% Define bounded regions, i.e.,
 % limits = [left1, left2, ..., center, ..., right2, right1]
 
