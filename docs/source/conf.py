@@ -14,8 +14,14 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
-matlab_src_dir = '../../empirical_intervals'
+#sys.path.insert(0, os.path.abspath('../..'))
+#matlab_src_dir = '../../empirical_intervals'
+
+sys.path.insert(0, os.path.abspath(os.path.join('..', '..', '..')))
+# sys.path.insert(0, os.path.abspath('.'))
+
+# tell Sphinx matlab extension where to find matlab code.
+matlab_src_dir = os.path.abspath(os.path.join('..', '..'))
 
 # -- Project information -----------------------------------------------------
 
@@ -48,6 +54,9 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
 ]
+    
+# autodoc_member_order='groupwise'
+primary_domain = 'mat'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
