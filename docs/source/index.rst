@@ -11,7 +11,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-References
-==========
-   
-.. bibliography:: references.bib
+   empirical_intervals

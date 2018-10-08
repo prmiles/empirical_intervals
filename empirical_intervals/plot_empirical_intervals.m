@@ -1,15 +1,36 @@
 function [medianhandle, fillhandle, settings] = ...
     plot_empirical_intervals(time, intervals, inputsettings)
-% Settings for plotting emprical intervals
-% Options:
-% - colorscheme: 'gradient' or 'spectrum';
-%   - gradient:
-%       * initialcolor: [r,g,b] - dimmest (lightest) color
-%   - spectrum:
-%       * colormap: jet, parula, hsv, etc. (see MathWorks)
-% - figID: specify figure handle - leave empty to generate new figure;
-% - transparency_level: # number between 0 (translucent) and 1 (opaque);
-% - meanmodelstyle: plot style/color for mean model response
+% Plot Empirical Intervals
+%
+% Settings for plotting empirical intervals
+%
+% `inputsettings`
+%   - `colorscheme`: `gradient` or `spectrum`;
+%   - `gradient`:
+%       * `initialcolor`: [r,g,b] - dimmest (lightest) color
+%   - `spectrum`:
+%       * `colormap`: jet, parula, hsv, etc. (see MathWorks)
+%   - `figID`: specify figure handle - leave empty to generate new figure;
+%   - `transparency_level`: # number between 0 (translucent) and 1 (opaque);
+%   - `meanmodelstyle`: plot style/color for mean model response
+%
+% Example:
+%
+% ::
+%
+%   settings.colorscheme = 'gradient';
+%   settings.initial_color = [0.5, 0.9, 0.7];
+%   [mh, fillh] = plot_empirical_intervals(P, Y_empirical_intervals, settings);
+% 
+% Input:
+%   * **time** (array): x-axis variable
+%   * **intervals** (array): results generated from :func:`~generate_empirical_intervals`
+%   * **inputsettings** (struct) : plot settings
+%
+% Returns:
+%   * **medianhandle** (handle): handle of median plot line
+%   * **fillhandle** (handle): handle for fill plots
+%   * **settings** (struct): actual settings used to generate plot
 
 % unpack input arguments
 if nargin < 3 || isempty(inputsettings)

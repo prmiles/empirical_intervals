@@ -1,12 +1,18 @@
 function h = fillyy(x,y1,y2,col,trans)
-%FILLYY  Fills space between lines
-% fillyy(x,y1,y2,col) fill space between lines (x,y1) and (x,y2)
-%  with color col
-
-% Marko Laine <Marko.Laine@Helsinki.FI>
-% $Revision: 1.2 $  $Date: 2003/05/08 18:55:23 $
-% Adapted by Paul Miles - 2018/03/01
-
+% Fill interval between two lines, (x, y1) and (x, y2)
+%
+% Fills space between lines. Calling fillyy(x,y1,y2,col) will fill space 
+% between lines (x,y1) and (x,y2) with color col
+%
+% Input:
+%   * **x** (array): independent variable
+%   * **y1** (array): y value of first line
+%   * **y2** (array): y value of second line
+%   * **col** (array): color to use in fill command
+%   * **trans** (scalar): Transparency level [0,1].
+%
+% Returns:
+%   * **h** (handle): Figure handle
 if nargin < 4
    col='red';
 end

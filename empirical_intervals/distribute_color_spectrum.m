@@ -1,5 +1,14 @@
 function [psty] = distribute_color_spectrum(nds, cmap)
-% evenly distribution color palette across nds data sets
+% Distribute color spectrum
+%
+% Evenly distribution color palette across nds data sets.
+%
+% Input:
+%   * **nds** (integer): Number of data sets
+%   * **cmap** (array): Color map (https://www.mathworks.com/help/matlab/ref/colormap.html)
+%
+% Returns:
+%   * **psty** (array): [nds x 3] - RGB distributed across color map
 
 if nargin < 2 || isempty(cmap)
     cmap = jet; % default color map
