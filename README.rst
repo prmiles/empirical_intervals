@@ -7,9 +7,8 @@ MATLAB toolbox for plotting empirical intervals based on a set of model response
 
 Getting Started
 ===============
-- `Project Homepage <https://prmiles.wordpress.ncsu.edu/codes/matlab-toolboxes/empirical-intervals/>`_
 - `GitHub Project Page <https://github.com/prmiles/empirical_intervals>`_
-- `User's Guide <https://prmiles.wordpress.ncsu.edu/files/2018/03/20180320_empirical_intervals_examples.pdf>`_
+- `User's Guide <https://github.com/prmiles/empirical_intervals/blob/master/tutorials.pdf>`_
 - `Documentation <http://empirical_intervals.readthedocs.io/>`_
 
 License
